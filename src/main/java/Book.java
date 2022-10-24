@@ -1,26 +1,20 @@
-package me.manylove.reflect;
-
-import me.manylove.reflect.annotaion.*;
-
-import java.lang.annotation.Inherited;
-
 @ClassAnnotation
 @RuntimeAnnotation
 @SourceAnnotation
 @InheritAnnotation
-@DefaultValueAnnotation("hash_002")
-@NonDefaultValueAnnotation(name = "goodName")
+//@DefaultValueAnnotation
 public class Book {
 
-    public static String staticAttr = "기본값";
-
-    private static int secretStaticNumber = 1;
-
+    @DefaultValueAnnotation
     public String publicAttr;
 
+    @DefaultValueAnnotation("value 값 채워짐")
     private String name;
+    @NonDefaultValueAnnotation(name="채워야 한다.")
     private String isbn;
 
+    @NonDefaultValueAnnotation(name="안채울 수 없다.")
+    @NonDefaultValueAnnotation(name="안채울 수 없다.")
     private String secretName;
 
     private double randomNumber= Math.random();
@@ -51,6 +45,6 @@ public class Book {
     public Book(String name, String isbn, double randomNumber) {
         this.name = name;
         this.isbn = isbn;
-        this.randomNumber = randomNumber;
+    this.randomNumber = randomNumber;
     }
 }
